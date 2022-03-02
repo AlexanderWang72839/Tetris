@@ -115,7 +115,7 @@ public class Piece extends JComponent implements Runnable {
         Graphics2D draw = (Graphics2D)g;
 
         for (Point point : points) {
-            this.drawSquare(point, color, g);
+            this.drawSquare(point, g);
         }
     }
 
@@ -124,16 +124,30 @@ public class Piece extends JComponent implements Runnable {
 
     }
 
-    public void drawSquare(Point point, Color color, Graphics g) {
-        Game.drawSquare(point, color, g);
+    public void drawSquare(Point point, Graphics g) {
+        Game.drawSquare(point, mainColor, topColor, sideColor, bottomColor, g);
     }
 
-    public Point rotateClockwise(Point pos) {
-        return (new Point((int)pos.y, -(int)pos.x));
+    public void rotateClockwise() {}
+
+    public void rotateCounterClockwise() {}
+
+    public void moveRight() {
+        for (Point point : points) {
+            point.x += 1;
+        }
     }
 
-    public Point rotateCounterClockwise(Point pos) {
-        return (new Point(-(int)pos.y, (int)pos.x));
+    public void moveLeft() {
+        for (Point point : points) {
+            point.x -= 1;
+        }
+    }
+
+    public void moveDown() {
+        for (Point point : points) {
+            point.y -= 1;
+        }
     }
 
     public int convert(int x, String y) {
