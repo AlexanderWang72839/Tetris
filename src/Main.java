@@ -10,7 +10,7 @@ public class Main {
         int currentFrame = 0;
 
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        window.setResizable(false);
+        window.setResizable(true);
         window.add(game);
         window.setTitle("Tetris");
         window.addKeyListener(listener);

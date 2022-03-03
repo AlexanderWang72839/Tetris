@@ -47,10 +47,13 @@ public class Piece extends JComponent implements Runnable {
 
     private Point[] points;
     private Color mainColor, topColor, sideColor, bottomColor;
+    private boolean alive;
 
 
 
     public Piece(int type) {
+        alive = true;
+
         switch (type) {
             case 1:
                 points = I.clone();
@@ -121,7 +124,17 @@ public class Piece extends JComponent implements Runnable {
 
     @Override
     public void run() {
+        while (Game.running && alive) {
+            //piece moving down
+            //crash detection
+            //loose detection
+            //turning and rotating
+        }
 
+        while (Game.running) {
+            //transfer pieces to death chunk
+            //save processiong power some how
+        }
     }
 
     public void drawSquare(Point point, Graphics g) {
